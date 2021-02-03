@@ -5,8 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CalculatorTest {
@@ -34,5 +33,19 @@ public class CalculatorTest {
         assertEquals(10,calculator.add(5,5));
 
     }
+
+    @Test
+    public void divideTest(){
+        assertEquals(0.33333333f,calculator.divide(1,3), 0.00001f);
+
+    }
+
+    @Test
+    public void divideByZeroTest(){
+        calculator.divide(100,0);
+        fail();
+    }
+
+
 
 }
