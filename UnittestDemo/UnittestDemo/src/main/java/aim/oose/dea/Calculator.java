@@ -11,8 +11,7 @@ public class Calculator {
 
     public float divide (float x, float y){
         if (y==0){
-            //TODO: iets met exceptions!
-            System.out.println("dit kan niet");
+            throw new IllegalArgumentException("Delen door nul is flauwekul!");
         }
 
         return (float) x / y;

@@ -18,12 +18,14 @@ public class CalculatorTest {
 
     @Test
     public void multiplyTest(){
+        // arrange (setup)
         int x = 3;
         int y = 3;
         int expected = 9; // 3 * 3 = 9;
 
+        // act (test)
         int result = calculator.multiply(x,y);
-
+        // assert (verify)
         assertEquals(expected,result);
     }
 
@@ -42,8 +44,12 @@ public class CalculatorTest {
 
     @Test
     public void divideByZeroTest(){
-        calculator.divide(100,0);
-        fail();
+        assertThrows(
+                IllegalArgumentException.class,
+                () ->  {
+                    calculator.divide(100,0);
+                }
+        );
     }
 
 
