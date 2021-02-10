@@ -17,7 +17,7 @@ public class App
 
     private static void action() throws Exception {
         App app = new App();
-        app.doSomething("corona");
+        app.doSomething("Michel");
 
     }
 
