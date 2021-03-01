@@ -1,6 +1,7 @@
-import oose.dea.StarWars;
-import oose.dea.oose.dea.dto.JediDTO;
-import org.junit.jupiter.api.Assertions;
+import oose.dea.dao.JediDAO;
+import oose.dea.domain.Jedi;
+import oose.dea.service.StarWars;
+import oose.dea.service.dto.JediDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

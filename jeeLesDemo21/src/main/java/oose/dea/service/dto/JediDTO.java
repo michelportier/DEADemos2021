@@ -1,4 +1,4 @@
-package oose.dea.oose.dea.dto;
+package oose.dea.service.dto;
 
 public class JediDTO {
     public int customerId;
