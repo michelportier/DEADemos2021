@@ -2,19 +2,42 @@ package oose.dea.dao;
 
 import oose.dea.domain.Jedi;
 
+import javax.annotation.Resource;
+import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
+import javax.sql.DataSource;
+import java.sql.*;
 
 @Default
 public class JediDAO implements IJediDAO {
 
+    @Resource(name = "jdbc/starwars")
+    DataSource dataSource;
+
     @Override
     public Jedi getJedi(int id){
-        // we should go to the database here, but we won't do that until tomorrow
-        Jedi jedi =  new Jedi(id);
-        jedi.setName("Thijmen");
-        jedi.setDark(false);
-        jedi.setBsn("12345");
+        String sql = "select * from jedi where customerId = ?";
 
-        return jedi;
+        try {
+            Connection connection = dataSource.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()){
+                Jedi jedi = new Jedi(resultSet.getInt("customerId"));
+                jedi.setDark(resultSet.getBoolean("darkside"));
+                jedi.setName(resultSet.getString("name"));
+                jedi.setBsn(resultSet.getString("bsn"));
+
+                return jedi;
+            }
+
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+
+        return null;
+
     }
 }

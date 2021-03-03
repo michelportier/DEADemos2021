@@ -35,7 +35,7 @@ public class StarWars {
 
         if (jedi == null){
             // help de jedi bestaat niet! wat doen we nu?
-            return Response.status(404).entity("niet gevonden").build();
+            return Response.status(404).build();
         }
 
         // this is considered ugly, but is it?
