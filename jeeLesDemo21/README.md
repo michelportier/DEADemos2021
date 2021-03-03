@@ -1,7 +1,7 @@
 ## Instructions
 Add this to your context.xml in TomEE:
 
-
+```
 <Resource
       name="jdbc/starwars"
       auth="Container"
@@ -14,13 +14,13 @@ Add this to your context.xml in TomEE:
       username="root"
       password="root"
     />
- 
+``` 
  
 And don't forget to download mysql connector and add to lib folder:
 https://dev.mysql.com/downloads/connector/j/
 
 And make a database:
-
+```
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
@@ -77,3 +77,5 @@ ALTER TABLE `jedi`
 --
 ALTER TABLE `jedi`
   MODIFY `customerId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  
+  ```
