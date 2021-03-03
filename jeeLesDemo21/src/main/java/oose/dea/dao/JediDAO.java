@@ -11,6 +11,8 @@ import java.sql.*;
 @Default
 public class JediDAO implements IJediDAO {
 
+
+
     @Resource(name = "jdbc/starwars")
     DataSource dataSource;
 
@@ -21,7 +23,7 @@ public class JediDAO implements IJediDAO {
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
+            statement.setInt(1,id);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()){
@@ -40,4 +42,8 @@ public class JediDAO implements IJediDAO {
         return null;
 
     }
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
 }
