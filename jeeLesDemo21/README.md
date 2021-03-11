@@ -6,13 +6,14 @@ Add this to your context.xml in TomEE:
       name="jdbc/starwars"
       auth="Container"
       type="javax.sql.DataSource"
-      maxActive="100"
-      maxIdle="30"
-      maxWait="10000"
+      maxTotal="10"
+      maxIdle="10"
+      maxWaitMillis="10000"
       driverClassName="com.mysql.cj.jdbc.Driver"
       url="jdbc:mysql://localhost:8889/starwars"
       username="root"
       password="root"
+
     />
 ``` 
  
