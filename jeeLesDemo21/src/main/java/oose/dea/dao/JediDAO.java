@@ -20,8 +20,8 @@ public class JediDAO implements IJediDAO {
     public Jedi getJedi(int id){
         String sql = "select * from jedi where customerId = ?";
 
-        try {
-            Connection connection = dataSource.getConnection();
+        try (Connection connection = dataSource.getConnection()){
+
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1,id);
             ResultSet resultSet = statement.executeQuery();
@@ -34,6 +34,7 @@ public class JediDAO implements IJediDAO {
 
                 return jedi;
             }
+
 
         } catch (SQLException exception) {
             exception.printStackTrace();
