@@ -1,11 +1,9 @@
 import oose.dea.dao.IJediDAO;
-import oose.dea.dao.JediDAO;
 import oose.dea.domain.Jedi;
-import oose.dea.service.StarWars;
-import oose.dea.service.dto.JediDTO;
+import oose.dea.rest.StarWars;
+import oose.dea.rest.dto.JediDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import javax.ws.rs.core.Response;
 

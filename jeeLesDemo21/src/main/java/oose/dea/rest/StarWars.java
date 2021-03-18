@@ -1,11 +1,10 @@
-package oose.dea.service;
+package oose.dea.rest;
 
 import oose.dea.dao.IJediDAO;
-import oose.dea.dao.JediDAO;
 import oose.dea.domain.Jedi;
-import oose.dea.service.dto.APKDTO;
-import oose.dea.service.dto.JediDTO;
-import oose.dea.service.dto.ShipDTO;
+import oose.dea.rest.dto.APKDTO;
+import oose.dea.rest.dto.JediDTO;
+import oose.dea.rest.dto.ShipDTO;
 
 
 import javax.inject.Inject;

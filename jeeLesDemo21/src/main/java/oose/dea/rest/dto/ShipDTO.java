@@ -1,4 +1,4 @@
-package oose.dea.service.dto;
+package oose.dea.rest.dto;
 
 public class ShipDTO {
     public String name;
